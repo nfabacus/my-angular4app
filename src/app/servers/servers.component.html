@@ -1,13 +1,19 @@
 <label>Server Name</label>
-<!-- <input
+
+<p>Sending input data using $event - Event binding.</p>
+<input
   type="text"
   class="form-control"
-  (input)="onUpdateServerName($event)"> -->
+  (input)="onUpdateServerName($event)">
+  {{ serverName }}
+
+  <br>
+  <p>Sending input data using ngModel - two way binding. *FormsModule is required in app.module for the two way binding to work.</p>
   <input
     type="text"
     class="form-control"
-    [(ngModel)]="serverName">
-  <p>{{ serverName }}</p>
+    [(ngModel)]="serverName2">
+  <p>{{ serverName2 }}</p>
 <button
   class="btn btn-primary"
   [disabled]="!allowNewServer"
@@ -17,10 +23,14 @@
 <!-- {{ allowNewServer }} -->
 <!-- <p [innerText]="allowNewServer"></p>
 <!-- {{ serverCreationStatus }} -->
+
+<!-- ngIf will show this p element, if serverCreated is true.  If you add else here, you can add another element e.g. noServer in case of serverCreated is false. -->
 <p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
 <ng-template #noServer>
   <p>No server was created.</p>
 </ng-template>
+
+<!--- ngFor iterate through an array and create the elements------------------------>
 <app-server *ngFor="let server of servers"></app-server>
 
 

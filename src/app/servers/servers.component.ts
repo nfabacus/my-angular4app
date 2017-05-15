@@ -9,6 +9,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'Hello';
+  serverName2 ='Bye';
   username="";
   serverCreated = false;
   servers = ['test server 1', 'test server 2'];
@@ -24,14 +25,14 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
-    this.servers.push(this.serverName);
+    this.servers.push(this.serverName);  // Access the array of server (servers) and push the new serverName.
     this.serverCreationStatus = "Server was created! Name is " + this.serverName;
 
   }
 
-  // onUpdateServerName(event: Event){
-  //   this.serverName = (<HTMLInputElement>event.target).value;
-  // }
+  onUpdateServerName(event: Event){
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
 
   onReset() {
     this.username ="";

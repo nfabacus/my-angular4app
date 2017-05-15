@@ -1,2 +1,5 @@
+<!--- ngStyle allows us to change style ---------------->
+<!--- ngClass allows us to add and remove classes. ----->
+<!--- FYI, here online classes had been added directly in server.compoent.ts file. ----->
 <p [ngStyle]="{backgroundColor: getColor()}"
-[ngClass]="{online: serverStatus === 'online'}">Server wit ID {{ serverId }} is {{ this.getServerStatus() }}!</p>
+[ngClass]="{onlineFontColor: serverStatus === 'online'}">Server wit ID {{ serverId }} is {{ this.getServerStatus() }}!</p>
